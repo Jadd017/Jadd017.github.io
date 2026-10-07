@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jad Barakat · Portfolio</title>
+<meta name="description" content="Jad Barakat, computer science graduate and Red Cross paramedic in Lebanon. Projects, including the Emergency First Aid Guide Android app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14263A;
+    --slate: #52606E;
+    --paper: #FFFFFF;
+    --tile: #EAF1F7;
+    --teal: #00796B;
+    --red: #C8352A;
+    --line: #D6E1EA;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 18px/1.6 "Atkinson Hyperlegible", system-ui, sans-serif;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* Intro */
+  header { padding: 72px 0 56px; }
+  .name {
+    font-family: "Archivo", sans-serif;
+    font-stretch: 125%;
+    font-weight: 800;
+    font-size: clamp(44px, 9vw, 104px);
+    line-height: .95;
+    letter-spacing: -.02em;
+    margin: 0;
+  }
+  .intro {
+    max-width: 34em;
+    margin: 28px 0 0;
+    font-size: 21px;
+    color: var(--slate);
+  }
+  .intro strong { color: var(--ink); font-weight: 700; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 28px 0 0; padding: 0; list-style: none; }
+  .links a { font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--line); }
+  .links a:hover { text-decoration-color: var(--teal); }
+
+  /* Projects */
+  .projects { border-top: 2px solid var(--ink); padding: 40px 0 88px; }
+  .projects > h2 {
+    font-family: "Archivo", sans-serif;
+    font-stretch: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 0 40px;
+  }
+  .project {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .project h3 {
+    font-family: "Archivo", sans-serif;
+    font-stretch: 112%;
+    font-weight: 800;
+    font-size: clamp(32px, 4.2vw, 46px);
+    line-height: 1.05;
+    margin: 0 0 18px;
+  }
+  .project .kind { margin: 0 0 8px; color: var(--teal); font-weight: 700; }
+  .project p { margin: 0 0 16px; max-width: 34em; }
+  .facts { margin: 24px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .facts li { display: grid; grid-template-columns: 6.5em 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 2px solid var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn:hover { border-color: var(--teal); }
+  .btn.primary:hover { background: var(--teal); }
+
+  /* Illustration wall */
+  .wall {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .wall li { margin: 0; }
+  .wall img { display: block; width: 100%; height: auto; border-radius: 14px; }
+  .wall span { display: block; font-size: 14px; line-height: 1.35; color: var(--slate); margin-top: 8px; }
+
+  footer { padding: 28px 0 40px; border-top: 1px solid var(--line); font-size: 15px; color: var(--slate); }
+
+  @media (max-width: 860px) {
+    header { padding: 48px 0 40px; }
+    .project { grid-template-columns: 1fr; gap: 36px; }
+    .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 420px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 16px; }
+    .intro { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 class="name">Jad<br>Barakat</h1>
+      <p class="intro"><strong>Computer science graduate and Red Cross paramedic</strong> based in Lebanon. I build apps, and some of them grow out of my work as a paramedic.</p>
+      <ul class="links">
+        <li><a href="https://github.com/Jadd017">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jad-barakat-858951240">LinkedIn</a></li>
+      </ul>
+    </header>
+
+    <section class="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+
+      <article class="project" id="first-aid">
+        <div>
+          <p class="kind">Android app</p>
+          <h3>Emergency First Aid Guide</h3>
+          <p>Type what happened in your own words, like "my friend burned his hand", and the app shows clear, numbered steps for that emergency, with a button to call 140.</p>
+          <p>Every step uses things people already have at home, such as t-shirts, blankets and towels, and none of them involve giving medicine. It works fully offline: a text matcher I wrote handles typos, word forms and long sentences, so there's no internet or AI that could make up advice.</p>
+          <ul class="facts">
+            <li><b>Covers</b><span>20 emergencies, from choking and bleeding to stroke and drowning</span></li>
+            <li><b>Visuals</b><span>60 illustrations drawn as vector graphics</span></li>
+            <li><b>Built with</b><span>Kotlin, Jetpack Compose, Material 3</span></li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/Jadd017/emergency-first-aid/raw/main/release/first-aid.apk">Download the APK</a>
+            <a class="btn" href="https://github.com/Jadd017/emergency-first-aid">View the code</a>
+          </div>
+        </div>
+
+        <div>
+          <ul class="wall">
+            <li><img src="assets/first-aid/ic_bleeding_pressure_tshirt.svg" alt="" width="108" height="108"><span>Press a t-shirt on the wound</span></li>
+            <li><img src="assets/first-aid/ic_burns_running_water.svg" alt="" width="108" height="108"><span>Cool a burn under running water</span></li>
+            <li><img src="assets/first-aid/ic_choking_back_blows.svg" alt="" width="108" height="108"><span>Back blows for choking</span></li>
+            <li><img src="assets/first-aid/ic_cpr_push.svg" alt="" width="108" height="108"><span>Push hard and fast for CPR</span></li>
+            <li><img src="assets/first-aid/ic_drown_reach.svg" alt="" width="108" height="108"><span>Reach from solid ground</span></li>
+            <li><img src="assets/first-aid/ic_heat_wet_towels.svg" alt="" width="108" height="108"><span>Wet towels for heatstroke</span></li>
+            <li><img src="assets/first-aid/ic_fracture_sling.svg" alt="" width="108" height="108"><span>A sling from a scarf</span></li>
+            <li><img src="assets/first-aid/ic_stroke_face.svg" alt="" width="108" height="108"><span>Check the face for stroke</span></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">Jad Barakat, Lebanon</div>
+  </footer>
+</body>
+</html>
