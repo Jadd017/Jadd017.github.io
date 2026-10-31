@@ -105,12 +105,26 @@
   .wall img { display: block; width: 100%; height: auto; border-radius: 14px; }
   .wall span { display: block; font-size: 14px; line-height: 1.35; color: var(--slate); margin-top: 8px; }
 
+  /* App screenshots */
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .screens li { margin: 0; }
+  .screens img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); }
+  .screens span { display: block; font-size: 14px; line-height: 1.35; color: var(--slate); margin-top: 8px; }
+
   footer { padding: 28px 0 40px; border-top: 1px solid var(--line); font-size: 15px; color: var(--slate); }
 
   @media (max-width: 860px) {
     header { padding: 48px 0 40px; }
     .project { grid-template-columns: 1fr; gap: 36px; }
     .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .screens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 420px) {
     body { font-size: 17px; }
@@ -200,14 +214,25 @@
           <p class="kind">Android app · In progress</p>
           <h3>Blood Donor Matching App</h3>
           <p>An app for Lebanon that matches urgent blood requests with compatible donors nearby. If nobody answers, the search area grows, and the person asking gets the donor's phone number.</p>
+          <ul class="facts">
+            <li><b>Features</b><span>Email verification, Google Sign-In, push notifications, anti-spam rules</span></li>
+            <li><b>Built with</b><span>Kotlin, Jetpack Compose, Ktor, PostgreSQL/PostGIS, Firebase</span></li>
+          </ul>
           <div class="actions">
             <a class="btn" href="https://github.com/Jadd017/blood-donor-app">View the code</a>
           </div>
         </div>
-        <ul class="facts">
-          <li><b>Features</b><span>Email verification, Google Sign-In, push notifications, anti-spam rules</span></li>
-          <li><b>Built with</b><span>Kotlin, Jetpack Compose, Ktor, PostgreSQL/PostGIS, Firebase</span></li>
-        </ul>
+
+        <div>
+          <ul class="screens">
+            <li><img src="assets/blood-donor/welcome.webp" alt="Welcome screen" width="480" height="1038" loading="lazy"><span>Sign in with email or Google</span></li>
+            <li><img src="assets/blood-donor/home.webp" alt="Home screen" width="480" height="1038" loading="lazy"><span>Home: requests I can help with</span></li>
+            <li><img src="assets/blood-donor/request-blood.webp" alt="Request blood screen" width="480" height="1038" loading="lazy"><span>Post an urgent request</span></li>
+            <li><img src="assets/blood-donor/donor-view.webp" alt="Donor view of a request" width="480" height="1038" loading="lazy"><span>Donor view: "I can help"</span></li>
+            <li><img src="assets/blood-donor/requester-view.webp" alt="Requester view of a request" width="480" height="1038" loading="lazy"><span>Requester view: donors on the way</span></li>
+            <li><img src="assets/blood-donor/home-dark.webp" alt="Home screen in dark mode" width="480" height="1038" loading="lazy"><span>Dark mode</span></li>
+          </ul>
+        </div>
       </article>
 
       <article class="project" id="carrygo" style="margin-top:72px;padding-top:56px;border-top:1px solid var(--line)">
